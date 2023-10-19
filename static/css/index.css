@@ -10,7 +10,7 @@
 
 body{
     background-image: url("https://picst.sunbangyan.cn/2023/10/19/a510f1dde3fcc8eba83c52a7250a700d.jpg");
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
