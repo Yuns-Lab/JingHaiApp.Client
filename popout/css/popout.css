@@ -1,0 +1,66 @@
+*{
+    user-select: none;
+}
+.closeBtn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+.closeBtn:hover{
+    color: #E81123;
+}
+.container{
+    padding: 10px;
+}
+.logo{
+    width: 62.2881356px;
+    height: 70px;
+    margin-left: 39.6%;
+}
+.title{
+    display: inline-block;
+    color: #264162;
+    margin-left: 26%;
+}
+.title2{
+    display: inline-block;
+    color: #264162;
+    margin-left: 40%;
+}
+.layui-input{
+    background-color: transparent;
+    border: 0;
+    height: 40px;
+}
+.layui-input:focus{
+    box-shadow: 0 0 0 #FFFFFF00 !important;
+}
+.layui-input::placeholder{
+    margin-left: 2px;
+}
+.line{
+    border-color: #264162 !important;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+h4{
+    color: #264162;
+}
+.layui-btn{
+    background-color: #264162;
+    width: 50%;
+}
+.username{
+    margin: 5px 5% 0 5%;
+}
+.password{
+    margin: 5px 5% 0 5%;
+}
+.btn{
+    display: flex;
+    margin: 10px 5% 0 5%;
+}
+.btn button{
+    border-radius: 5px;
+}

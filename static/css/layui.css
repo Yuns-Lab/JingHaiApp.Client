@@ -1,0 +1,10 @@
+div.layui-layer.layui-layer-page{
+    background-color: rgba(255,255,255,0.8);
+}
+
+div.layui-layer.layui-layer-dialog.layui-layer-border.layui-layer-msg {
+/* div.layui-layer-content.layui-layer-padding:contains("登录失败：用户名或密码不能为空") ~ div.layui-layer.layui-layer-dialog.layui-layer-border.layui-layer-msg { */
+    top: 300px !important;
+    width: 298px !important;
+    background-color: rgba(255,255,255,0.8);
+}

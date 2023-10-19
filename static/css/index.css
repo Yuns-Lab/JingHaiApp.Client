@@ -1,0 +1,208 @@
+*{
+    --colorbrush1 : antiquewhite;
+    --colorbrush2 : #272A32;
+    --colorbrush3 : rgb(255, 255, 255);
+    --colorbrush4 : rgba(255, 255, 255, 0.4);
+    --colorbrush5 : rgb(206, 206, 206);
+    --colorbrush6 : rgba(206, 206, 206, 0.4);
+    --colorbrush7 : rgba(0, 0, 0, 0.2);
+}
+
+body{
+    background-image: url("/static/img/bg.jpg");
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.blur{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorbrush7);
+}
+
+.NavBar{
+    position: absolute;
+    left: 0;
+    /* top: 10px; */
+    width: 100%;
+    height: 60px;
+    z-index: 100;
+    padding: 20px 0;
+    background-color: #ffffff09;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+    & .left{
+        position: absolute;
+        left: 100px;
+    }
+    & .right{
+        position: absolute;
+        right: 100px;
+        top: 20px;
+        width: 300px;
+        height: 55px;
+        opacity: 1;
+        border-radius: 100px;
+        background: var(--colorbrush2);
+    }
+}
+
+/* Start: Nav Left */
+#logo{
+    position: absolute;
+    top: -6px;
+    width: 62.2881356px;
+    height: 70px;
+    user-select: none;
+}
+
+#title{
+    position: absolute;
+    color: var(--colorbrush1);
+    left: 72px;
+    top: 11px;
+    font-size: 20px;
+    width: 160px;
+    user-select: none;
+}
+/* End: Nav Left */
+
+/* Start: Nav Center */
+#centerNav{
+    --w : 800px;
+    --div_w : calc(var(--w) / 5);
+    --h : 55px;
+    --r : 15px;
+    width: var(--w);
+    height: var(--h);
+    border-radius: var(--r);
+    display: flex;
+    margin: 0 auto;
+    color: var(--colorbrush1);
+    & .item{
+        width: var(--div_w);
+        height: var(--h);
+        font-size: 20px;
+        text-align: center;
+        line-height: var(--h);
+        border-radius: 5px;
+        transition: background-color .2s ease-in-out;
+    }
+    & .item:is(:nth-child(1),:nth-child(2),:nth-child(3),:nth-child(4)){
+        margin-right: 5px;
+    }
+    & .item:hover{
+        cursor: pointer;
+        background-color: #96AEC230 !important;
+    }
+    & .item.this{
+        background-color: #96AEC220;
+    }
+}
+/* End: Nav Center */
+
+/* Start: Nav Right */
+#user{
+    cursor: pointer;
+    position: absolute;
+    left: 8px;
+    top: 7.3px;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    border-radius: 100px;
+    background: var(--colorbrush1);
+    box-shadow: 0 0 15px 2px var(--colorbrush4);
+    &:active{
+        background-color: var(--colorbrush3);
+        box-shadow: 0 0 45px 2px var(--colorbrush6);
+    }
+}
+
+#user-login, #user-info{
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    position: absolute;
+    top: 9.5px;
+    width: 40px;
+    text-align: center;
+    color: var(--colorbrush2);
+}
+
+#user-info{
+    font-size: large;
+}
+
+#message{
+    cursor: pointer;
+    position: absolute;
+    left: 70px;
+    top: 10.3px;
+    width: 35px;
+    height: 35px;
+    opacity: 1;
+    border-radius: 100px;
+    color: var(--colorbrush1);
+    background: transparent;
+    /* hover */
+    &:hover{
+        box-shadow: 0 0 15px 2px var(--colorbrush4);
+        background-color: var(--colorbrush1);
+        color: #000;
+        transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+    }
+    /* after */
+    &:after{
+        display: none; /* 显示时调 flex JS */
+        content: '1'; /* 显示时写具体值 JS */
+        background: #FB7299;
+        color: var(--colorbrush1);
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        justify-content: center;
+        border-radius: 100px;
+        position: absolute;
+        top: -4px;
+        left: 23px;
+    }
+}
+
+#message-container{
+    position: absolute;
+    left: 9.5px;
+    top: 8.5px
+}
+
+#clock{
+    user-select: none;
+    font-size: large;
+    position: relative;
+    left: 220px;
+    top: 17px;
+    color: var(--colorbrush1);
+}
+/* End: Nav Right */
+
+/* Start: Main Content */
+.apage{
+    display: none;
+    opacity: 0;
+    position: relative;
+    top: 100px;
+    color: var(--colorbrush1);
+    &.this{
+        display: block;
+    }
+}
+
+.fade-in{
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+/* End: Main Content */

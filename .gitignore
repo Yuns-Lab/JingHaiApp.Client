@@ -1,0 +1,12 @@
+# 忽略临时文件
+*.tmp
+*.bak
+
+# 忽略 VSCode 配置
+/.vscode
+
+# 保存部分示例用
+/demos
+
+# 忽略测试用的文件(夹)
+/static/img/203c005027243a4a5bb8cae4202b3eec8436961f.jpg
