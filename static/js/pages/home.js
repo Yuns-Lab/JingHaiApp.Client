@@ -1,5 +1,5 @@
 function page_home__editElements(){
-    document.getElementById("1-text-welcome-name").innerHTML = "你好 " + localStorage.getItem("username");
+    editWelcomeContent(document.getElementById("1-text-welcome-name"))
     document.getElementById("1-text-welcome-to").style.display = "block";
     document.getElementById("1-text-premission").style.display = "block";
     document.getElementById("1-text-premission").innerHTML = "你的权限等级是：" + localStorage.getItem("premission");

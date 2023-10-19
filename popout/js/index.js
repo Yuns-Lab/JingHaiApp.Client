@@ -72,8 +72,7 @@ function logout_true(){
     // UNIT 清理 localStorage
     localStorage.removeItem("username")
     localStorage.removeItem("premission")
-    localStorage.removeItem("index_login")
-    localStorage.removeItem("index_logout")
+    localStorage.setItem("logged", false)
     // UNIT 刷新整个页面
     location.reload();
 }
