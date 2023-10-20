@@ -271,7 +271,7 @@ body{
     }
 }
 
-#p1-container .card :nth-child(3){
+#p1-container .card:nth-child(3){
     margin-right: 0;
 }
 /* End: Main Content */
