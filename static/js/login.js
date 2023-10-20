@@ -10,7 +10,7 @@ function login_ok(avatar){
     }
     document.getElementById("user").setAttribute("onclick","logout()")
     document.getElementById("user").appendChild(user_info);
-    setTimeout(function(){ page_home__editElements(); }, 100);
+    setTimeout(function(){ page_home__editElements(); page_joinexam__editElements(); }, 100);
     localStorage.setItem("logged", true);
 }
 
