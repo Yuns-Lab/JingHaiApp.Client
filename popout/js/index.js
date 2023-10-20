@@ -30,6 +30,9 @@ function login(){
             }
         }
     }
+    xhr.onerror = function(){
+        layer.msg("登录失败：无法连接至服务器", {icon: 2});
+    }
     var username = document.getElementById("username").value;
     localStorage.setItem("username", username);
     const password = document.getElementById("password").value;
@@ -53,6 +56,9 @@ function register(){
                 layer.msg("注册失败：服务器错误", {icon: 2});
             }
         }
+    }
+    xhr.onerror = function(){
+        layer.msg("登录失败：无法连接至服务器", {icon: 2});
     }
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
