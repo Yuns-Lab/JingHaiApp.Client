@@ -5,15 +5,17 @@ document.addEventListener('contextmenu', function(event) {
 
 // 拒绝 开发人员工具 ( F12 / Ctrl+Shift+I )
 document.addEventListener('keydown', function(event) {
-    if ((event.key == 'F12' || event.ctrlKey && event.shiftKey && event.key == 'I')) {
+    if ((event.key == 'F12' || (event.ctrlKey && event.shiftKey && event.key == 'I'))) {
         event.preventDefault();
     }
 });
 
 // 拒绝调试 ( 无限 debug )
-setInterval(function(){
-    debugger;
-}, 1e3)
+// setInterval(function(){
+//     if (localStorage.getItem("premission") != 5){
+//         debugger;
+//     }
+// }, 1e3)
 
 function _dev_clearCookie(){
     try{

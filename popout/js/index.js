@@ -67,18 +67,35 @@ function register(){
 }
 
 function logout_true(){
-    // UNIT 清理 Cookie
-    var cookies = document.cookie.split(";"); //获取所有cookie
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/"; //将过期时间设置为过去的时间，使此cookie被删除
+    // UNIT 汇报服务器清理 Cookie
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4){
+            if (xhr.status == 200){
+                // UNIT 清理 Cookie
+                var cookies = document.cookie.split(";"); //获取所有cookie
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i];
+                    var eqPos = cookie.indexOf("=");
+                    var name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/"; //将过期时间设置为过去的时间，使此cookie被删除
+                }
+                // UNIT 清理 localStorage
+                localStorage.removeItem("username")
+                localStorage.removeItem("premission")
+                localStorage.setItem("logged", false)
+                // UNIT 刷新整个页面
+                location.reload();
+            } else if (xhr.status == 404){
+                layer.msg("登出失败：账号未登录", {icon: 2});
+            } else if (xhr.status == 400){
+                layer.msg("登出失败：用户名为空", {icon: 2});
+            }
+        }
     }
-    // UNIT 清理 localStorage
-    localStorage.removeItem("username")
-    localStorage.removeItem("premission")
-    localStorage.setItem("logged", false)
-    // UNIT 刷新整个页面
-    location.reload();
+    xhr.onerror = function(){
+        layer.msg("登出失败：无法连接至服务器<p>请联系管理员获得支持", {icon: 2});
+    }
+    xhr.open("GET", server_url + "/user/logout?username=" + localStorage.getItem("username"));
+    xhr.send();
 }
